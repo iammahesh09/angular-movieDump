@@ -10,6 +10,7 @@ import { MenuComponent } from './menu/menu.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { HomeComponent } from './home/home.component';
 import { MoviesComponent } from './movies/movies.component';
+import { MovieDetilasComponent } from './movie-detilas/movie-detilas.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { MoviesComponent } from './movies/movies.component';
     MenuComponent,
     SignInComponent,
     HomeComponent,
-    MoviesComponent
+    MoviesComponent,
+    MovieDetilasComponent
   ],
   imports: [
     BrowserModule,

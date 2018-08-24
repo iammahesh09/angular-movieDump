@@ -16,5 +16,9 @@ export class MoviesService {
     return this._http.get(this.movieUrl, { headers: hder })
   }
 
+  getMovieDetails(id) {
+    var hder = { 'authorization': this._authService.getToken() };
+    return this._http.get("http://localhost:8000/api/movies/" + id, { headers: hder })
+  }
 
 }

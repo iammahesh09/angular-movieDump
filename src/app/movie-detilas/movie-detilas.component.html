@@ -1,0 +1,58 @@
+<section>
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-4">
+          <img src="{{movie.Poster}}" alt="{{movie.Title}}" class="img-fluid">
+        </div>
+        <div class="col-sm-8">
+          <h4 class="card-title">{{movie.Title}}</h4>
+          <p class="card-text">{{movie.Plot}}</p>
+          <p class="bold mb-0">Actors : </p>
+          <nav class="nav">
+            <a *ngFor="let Actor of movie.Actors" class="nav-link" href="#">{{Actor}}</a>
+          </nav>
+          <div [hidden]="!movie.Director">
+            <p class="bold mb-0">Director : </p>
+            <nav class="nav">
+              <a *ngFor="let Dir of movie.Director" class="nav-link" href="#">{{Dir}}</a>
+            </nav>
+          </div>
+          <div [hidden]="!movie.Genre">
+            <p class="bold mb-0">Genre : </p>
+            <nav class="nav">
+              <a *ngFor="let gen of movie.Genre" class="nav-link" href="#">{{gen}}</a>
+            </nav>
+          </div>
+          <div [hidden]="!movie.Language">
+            <p class="bold mb-0">Language : </p>
+            <nav class="nav">
+              <a *ngFor="let Lang of movie.Language" class="nav-link" href="#">{{Lang}}</a>
+            </nav>
+          </div>
+          <div [hidden]="!movie.Country">
+            <p class="bold mb-0">Country : </p>
+            <nav class="nav">
+              <a *ngFor="let Cou of movie.Country" class="nav-link" href="#">{{Cou}}</a>
+            </nav>
+          </div>
+          <div [hidden]="!movie.Writer">
+            <p class="bold mb-0">Writer : </p>
+            <nav class="nav">
+              <a *ngFor="let Wri of movie.Writer" class="nav-link" href="#">{{Wri}}</a>
+            </nav>
+          </div>
+
+          <div [hidden]="!movie.Website">
+            <p class="bold mb-0">Website :</p>
+            <a href="{{movie.Website}}" class="btn btn-link" target="_blank">{{movie.Title}}</a>
+          </div>
+          <div [hidden]="!movie.Year">
+            <p class="bold mb-0">Year :</p>
+            {{movie.Year}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
