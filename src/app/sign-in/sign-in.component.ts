@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -14,7 +14,8 @@ export class SignInComponent implements OnInit {
   loginResult: boolean;
   loginResultMsg: string;
   loginError: boolean = false;
-  constructor(private _authService: AuthService, private _router: Router) { }
+  returnUrl: any;
+  constructor(private _authService: AuthService, private _router: Router, private _activatedRoute: ActivatedRoute) { }
 
   userLogin() {
     this._authService.login(this._user).subscribe(
@@ -23,7 +24,9 @@ export class SignInComponent implements OnInit {
         this.loginError = true;
         this.loginResultMsg = "Successfully login"
         this._authService.saveToken(res["token"])
-        this._router.navigate(["/"]);
+        //this._router.navigate(["/"]);
+        // login successful so redirect to return url
+        this._router.navigateByUrl(this.returnUrl);
       },
       error => {
         this.loginResult = true;
@@ -36,5 +39,10 @@ export class SignInComponent implements OnInit {
   }
 
   ngOnInit() {
+    // reset login status
+    this._authService.logout();
+
+    // get return url from route parameters or default to '/'
+    this.returnUrl = this._activatedRoute.snapshot.queryParams['returnUrl'] || '/';
   }
 }
