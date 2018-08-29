@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-child',
@@ -6,20 +7,16 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./child.component.css']
 })
 export class ChildComponent implements OnInit {
+  childMessage: string;
 
-  childMsg: any = "Some quick example text to build on the card title and make up the bulk of the card's content";
-
-  @Input() childMessage: any;
-
-  @Output() msgEvent = new EventEmitter();
-
-  constructor() { }
+  constructor(private _sharedSrc: SharedService) { }
 
   ngOnInit() {
+    this._sharedSrc.currentMsg.subscribe(res => this.childMessage = res)
+  }
+  sharedData(data) {
+    this._sharedSrc.changeMsg(data.value)
   }
 
-  ChildToParent(msg) {
-    this.msgEvent.emit(msg.value)
-  }
 
 }

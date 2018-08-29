@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-parent',
@@ -6,21 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parent.component.css']
 })
 export class ParentComponent implements OnInit {
+  parentMessage: any;
 
-  parentMsg: any = "Some quick example text to build on the card title and make up the bulk of the card's content";
-  childMsg: any;
-
-  constructor() { }
+  constructor(private _sharedSrc: SharedService) { }
 
   ngOnInit() {
+    this._sharedSrc.currentMsg.subscribe(res => this.parentMessage = res)
   }
 
-  ParentToChild(msg) {
-    this.parentMsg = msg.value;
+  sharedData(data) {
+    this._sharedSrc.changeMsg(data.value)
   }
 
-  recevieMsg($event) {
-    this.childMsg = $event;
-  }
 
 }

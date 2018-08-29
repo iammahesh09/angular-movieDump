@@ -1,13 +1,13 @@
 <section>
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">Child</h5>
+      <h5 class="card-title">Component Two</h5>
       <div class="row">
         <div class="col-sm-10">
           <input type="text" class="form-control" #childMsg>
         </div>
         <div class="col-sm-1">
-          <button class="btn btn-primary btn-md" (click)="ChildToParent(childMsg)">Send</button>
+          <button class="btn btn-primary btn-md" (click)="sharedData(childMsg)">Send</button>
         </div>
       </div>
       <hr>
