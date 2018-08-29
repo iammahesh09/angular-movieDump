@@ -14,6 +14,9 @@ import { HomeComponent } from './home/home.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieDetilasComponent } from './movie-detilas/movie-detilas.component';
 import { ChartsComponent } from './charts/charts.component';
+import { ParentComponent } from './sharedComponents/parent/parent.component';
+import { ChildComponent } from './sharedComponents/child/child.component';
+import { SharedComponent } from './sharedComponents/shared.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { ChartsComponent } from './charts/charts.component';
     HomeComponent,
     MoviesComponent,
     MovieDetilasComponent,
-    ChartsComponent
+    ChartsComponent,
+    SharedComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,

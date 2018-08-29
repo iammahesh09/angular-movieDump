@@ -9,12 +9,14 @@ import { MenuComponent } from './menu/menu.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieDetilasComponent } from './movie-detilas/movie-detilas.component';
 import { ChartsComponent } from './charts/charts.component';
+import { SharedComponent } from './sharedComponents/shared.component';
 
 const childRoutes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'movies', component: MoviesComponent },
     { path: 'movies/:id', component: MovieDetilasComponent },
-    { path: 'charts', component: ChartsComponent }
+    { path: 'charts', component: ChartsComponent },
+    { path: 'shared', component: SharedComponent }
 ]
 
 const appRouters: Routes = [
