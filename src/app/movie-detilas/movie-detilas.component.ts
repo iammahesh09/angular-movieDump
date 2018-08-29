@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { MoviesService } from '../services/movies.service';
-import { Route } from '../../../node_modules/@angular/compiler/src/core';
+import { Route } from '@angular/compiler/src/core';
 
 @Component({
   selector: 'app-movie-detilas',

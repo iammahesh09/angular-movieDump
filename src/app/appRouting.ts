@@ -8,11 +8,13 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { MenuComponent } from './menu/menu.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieDetilasComponent } from './movie-detilas/movie-detilas.component';
+import { ChartsComponent } from './charts/charts.component';
 
 const childRoutes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'movies', component: MoviesComponent },
-    { path: 'movies/:id', component: MovieDetilasComponent }
+    { path: 'movies/:id', component: MovieDetilasComponent },
+    { path: 'charts', component: ChartsComponent }
 ]
 
 const appRouters: Routes = [
