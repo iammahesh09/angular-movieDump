@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './appRouting';
 import { ChartsModule } from 'ng2-charts';
@@ -17,6 +17,7 @@ import { ChartsComponent } from './charts/charts.component';
 import { ParentComponent } from './sharedComponents/parent/parent.component';
 import { ChildComponent } from './sharedComponents/child/child.component';
 import { SharedComponent } from './sharedComponents/shared.component';
+import { TokenInterceptor } from './services/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,11 @@ import { SharedComponent } from './sharedComponents/shared.component';
     AppRoutingModule,
     ChartsModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
