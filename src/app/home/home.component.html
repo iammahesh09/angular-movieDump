@@ -1,3 +1,18 @@
-<p>
-  home works!
-</p>
+<h1 class="display-4 text-center">Hello! Welcome to {{title}}</h1>
+
+
+<!-- Two way Binding -->
+<input type="text" [(ngModel)]="username">
+
+<p>{{username}}</p>
+
+
+<!-- Split Two way Binding -->
+<input type="text" [ngModel]="username2" (ngModelChange)="username2=$event">
+
+<p>{{username2}}</p>
+
+<!-- Split Two way Binding -->
+<input type="text" [ngModel]="username3" (ngModelChange)="userName($event)">
+
+<p>{{username3}}</p>
