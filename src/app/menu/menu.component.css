@@ -1,3 +1,10 @@
 .nav-item .nav-link {
-  text-transform: capitalize
+  text-transform: capitalize;
+  margin: .5rem .5rem !important;
+  padding: 0 !important;
+  border-bottom: 2px solid transparent;
+}
+
+.navbar-nav .active>.nav-link {
+  border-bottom: 2px solid #000;
 }

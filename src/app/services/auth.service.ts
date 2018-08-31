@@ -8,12 +8,14 @@ import { Subject } from 'rxjs';
 })
 export class AuthService {
 
-  loginUrl: string = "http://localhost:8000/api/auth/login";
-
   constructor(private _http: HttpClient, private _router: Router) { }
 
   login(userData) {
     return this._http.post('http://localhost:8000/api/auth/login', userData)
+  }
+
+  register(user) {
+    return this._http.post<any>('http://localhost:8000/api/auth/register', user)
   }
 
   saveToken(token: string) {

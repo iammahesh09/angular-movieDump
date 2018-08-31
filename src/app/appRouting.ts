@@ -10,9 +10,11 @@ import { MoviesComponent } from './movies/movies.component';
 import { MovieDetilasComponent } from './movie-detilas/movie-detilas.component';
 import { ChartsComponent } from './charts/charts.component';
 import { SharedComponent } from './sharedComponents/shared.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 const childRoutes: Routes = [
-    { path: '', component: HomeComponent },
+    { path: '', redirectTo: 'movies', pathMatch: 'full' },
+    { path: 'home', component: HomeComponent },
     { path: 'movies', component: MoviesComponent },
     { path: 'movies/:id', component: MovieDetilasComponent },
     { path: 'charts', component: ChartsComponent },
@@ -22,6 +24,7 @@ const childRoutes: Routes = [
 const appRouters: Routes = [
     { path: '', component: MenuComponent, canActivate: [AuthGuard], children: childRoutes },
     { path: 'sign-in', component: SignInComponent },
+    { path: 'sign-up', component: SignUpComponent },
     { path: '**', redirectTo: '/' }
 ]
 

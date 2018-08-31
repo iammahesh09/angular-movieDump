@@ -18,6 +18,7 @@ import { ParentComponent } from './sharedComponents/parent/parent.component';
 import { ChildComponent } from './sharedComponents/child/child.component';
 import { SharedComponent } from './sharedComponents/shared.component';
 import { TokenInterceptor } from './services/token.interceptor';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { TokenInterceptor } from './services/token.interceptor';
     ChartsComponent,
     SharedComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
